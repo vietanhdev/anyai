@@ -62,9 +62,9 @@ all = [
 anyai = "anyai.cli:main"
 
 [project.urls]
-Homepage = "https://www.nrl.ai"
-Repository = "https://github.com/vietanhdev/anyai"
+Homepage = "https://github.com/vietanhdev/anyai"
 Documentation = "https://github.com/vietanhdev/anyai#readme"
+Repository = "https://github.com/vietanhdev/anyai"
 Issues = "https://github.com/vietanhdev/anyai/issues"
 
 [tool.hatch.build.targets.wheel]
