@@ -1,0 +1,83 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anyai"
+version = "0.2.4"
+description = "AnyAI - One-liner AI for everyone. A unified gateway to AI capabilities."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [
+    { name = "Viet-Anh Nguyen", email = "vietanh.dev@gmail.com" },
+]
+keywords = ["ai", "ml", "machine-learning", "deep-learning", "nlp", "cv", "ocr"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "Pillow>=9.0.0",
+    "click>=8.0",
+    "rich>=12.0",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.0.0"]
+cv = ["anycv"]
+ocr = ["anyocr"]
+llm = ["anyllm"]
+ml = ["anyml"]
+nlp = ["anynlp"]
+deploy = ["anydeploy"]
+table = ["tableai"]
+robo = ["anyrobo"]
+voice = ["anyrobo"]
+traincv = ["traincv"]
+all = [
+    "anycv",
+    "anyocr",
+    "anyllm",
+    "anyml",
+    "anynlp",
+    "anydeploy",
+    "tableai",
+    "anyrobo",
+    "traincv",
+]
+
+[project.scripts]
+anyai = "anyai.cli:main"
+
+[project.urls]
+Homepage = "https://www.nrl.ai"
+Repository = "https://github.com/vietanhdev/anyai"
+Documentation = "https://github.com/vietanhdev/anyai#readme"
+Issues = "https://github.com/vietanhdev/anyai/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anyai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/anyai/",
+    "tests/",
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+]

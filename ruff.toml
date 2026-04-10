@@ -1,0 +1,24 @@
+target-version = "py38"
+line-length = 99
+
+[lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes
+    "I",     # isort
+    "B",     # flake8-bugbear
+    "S",     # flake8-bandit (security)
+    "UP",    # pyupgrade
+]
+ignore = [
+    "S101",  # assert usage (fine in tests)
+    "S603",  # subprocess without shell=True (we use list form)
+    "S607",  # partial executable path in subprocess
+]
+
+[lint.per-file-ignores]
+"tests/**/*.py" = ["S"]
+
+[format]
+quote-style = "double"

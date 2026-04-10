@@ -1,0 +1,21 @@
+name: Bug Report
+description: Report a bug
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+  - type: input
+    attributes:
+      label: Package and version
+      placeholder: "anyai 0.1.0"
+  - type: input
+    attributes:
+      label: Python version
+      placeholder: "3.11"
